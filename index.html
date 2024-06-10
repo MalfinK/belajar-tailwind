@@ -3,10 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Bisa juga dimasukkan ke dalam file tailwind.config.js (ada di link https://tailwindcss.com/docs/customizing-spacing), cara dibawah ada di sini (https://tailwindcss.com/docs/installation)
+        tailwind.config = {
+          theme: {
+            // Extend itu perpanjangan dari class yang sudah ada nah kalau ga pakai extend maka class yang sudah ada tidak akan berfungsi
+            extend: {
+              spacing: {
+                '13': '3.25rem',
+              }
+            }
+          }
+        }
+      </script>
     <title>Belajar Tailwind</title>
-    <link rel="stylesheet" href="style.css">
+    <style type="text/tailwindcss">
+      /* Karena pakai tailwind type nya diperlukan */
+        * {
+            border: 1px solid red;
+        }
+    </style>
 </head>
 <body>
-    <h1 class="text-6xl">Mari Belajar Tailwind CSS</h1>
+    <h1>Mari Belajar Tailwind CSS</h1>
+
+    <section class="mb-10">
+        <h2>Spacing</h2>
+        <div class="ml-13">Margin</div>
+        <div class="py-8">Padding</div>
+    </section>
+
+    <section class="mb-10">
+        <h2>Sizing</h2>
+        <div class="w-32 h-32">Kotak 1</div>
+        <div class="max-w-xs min-h-screen">Kotak 2</div>
+    </section>
+
+    <!--  
+      Note : 
+      1. Margin ada min dan auto sedangkan padding tidak ada
+      2. w-1/2 artinya 50% dari parentnya
+      3. max-w-xs artinya lebarnya akan seperti itu sampai ukuran xs (extra small) atau 20rem
+      4. min-h-screen artinya tingginya akan seperti itu sampai ukuran screen (tinggi layar) atau 100vh
+    -->
 </body>
 </html>
