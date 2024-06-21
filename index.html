@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -153,14 +153,57 @@
 
     <hr class="my-24 border-t-4">
 
-    <div class="container px-6 font-inter max-w-md mx-auto sm:max-w-xl md:max-w-5xl">
-      <h3 class="text-4xl font-bold text-slate-800 sm:text-5xl md:text-6xl">Muhammad Al<span class="text-sky-500">fin</span> Khaerudin</h3>
-      <img src="img/wp.jpg" alt="Walpaper" class="mt-4 rounded-xl shadow-xl sm:mt-6 sm:h-64 sm:w-full sm:object-cover sm:object-center">
-      <h2 class="mt-6 text-2xl font-semibold text-slate-800 sm:mt-8 sm:text-4xl">Mari Belajar Programming Bersama MAK</h2>
-      <p class="mt-2 text-slate-800 sm:mt-4 sm:text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, reprehenderit voluptatibus commodi sit accusantium dicta modi quia earum nobis voluptates est explicabo molestiae asperiores.</p>
-      <!-- button -->
-      <div class="mt-4 sm:mt-6">
-        <a href="#" class="inline-block px-5 py-3 bg-red-600 text-white rounded-lg shadow-lg uppercase font-semibold tracking-wider text-sm sm:text-base">Subscribe Channel Youtube</a>
+    <div class="container px-6 font-inter max-w-md mx-auto sm:max-w-xl md:max-w-5xl lg:flex lg:max-w-full lg:p-0">
+      <div class="lg:p-12 lg:flex-1">
+        <h3 class="text-4xl font-bold text-slate-800 sm:text-5xl md:text-6xl">Muhammad Al<span class="text-sky-500">fin</span> Khaerudin</h3>
+        <img src="img/wp.jpg" alt="Walpaper" class="mt-4 rounded-xl shadow-xl sm:mt-6 sm:h-64 sm:w-full sm:object-cover sm:object-center lg:hidden">
+        <h2 class="mt-6 text-2xl font-semibold text-slate-800 sm:mt-8 sm:text-4xl">Mari Belajar Programming Bersama MAK</h2>
+        <p class="mt-2 text-slate-800 sm:mt-4 sm:text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, reprehenderit voluptatibus commodi sit accusantium dicta modi quia earum nobis voluptates est explicabo molestiae asperiores.</p>
+        <!-- button -->
+        <div class="mt-4 sm:mt-6">
+          <a href="#" class="inline-block px-5 py-3 bg-red-600 text-white rounded-lg shadow-lg uppercase font-semibold tracking-wider text-sm sm:text-base">Subscribe Channel Youtube</a>
+        </div>
+      </div>
+      <div class="hidden lg:flex lg:w-1/2">
+        <img src="img/wp.jpg" alt="Walpaper" class="object-cover rounded-l-3xl">
+      </div>
+    </div>
+
+    <h2 class="mt-24 mb-20 text-center font-bold text-3xl text-slate-700">My Gallery</h2>
+    
+    <div class="container mx-auto px-6 font-inter">
+      <div class="rounded-md shadow-lg overflow-hidden mb-10">
+        <img src="img/laptop.jpg" alt="Laptop" class="w-full">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 text-slate-700">
+            Image Title
+          </div>
+          <p class="text-sm text-slate-600">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae assumenda odio harum veniam, omnis maxime, earum repellendus in qui nemo delectus ut tempore officiis temporibus aliquam? Perferendis ratione voluptas magnam.
+          </p>
+        </div>
+      </div>
+      <div class="rounded-md shadow-lg overflow-hidden mb-10">
+        <img src="img/laptop.jpg" alt="Laptop" class="w-full">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 text-slate-700">
+            Image Title
+          </div>
+          <p class="text-sm text-slate-600">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae assumenda odio harum veniam, omnis maxime, earum repellendus in qui nemo delectus ut tempore officiis temporibus aliquam? Perferendis ratione voluptas magnam.
+          </p>
+        </div>
+      </div>
+      <div class="rounded-md shadow-lg overflow-hidden mb-10">
+        <img src="img/laptop.jpg" alt="Laptop" class="w-full">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 text-slate-700">
+            Image Title
+          </div>
+          <p class="text-sm text-slate-600">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae assumenda odio harum veniam, omnis maxime, earum repellendus in qui nemo delectus ut tempore officiis temporibus aliquam? Perferendis ratione voluptas magnam.
+          </p>
+        </div>
       </div>
     </div>
 
@@ -180,6 +223,8 @@
       10. min-width artinya lebarnya minimal sekian artinya misal min-w-640 keatas, maka lebarnya minimal 640px, sedangkan max-width artinya lebarnya maksimal sekian artinya misal max-w-640 kebawah, maka lebarnya maksimal 640px
       11. sm, md, lg, xl artinya small, medium, large, extra large yang disebut juga sebagai breakpoint
       12. Kalau di tailwind secara default menggunakan breakpoint mobile-first artinya yang diutamakan adalah mobile dulu baru ke atasnya sama seperti bootstrap
+      13. Saat kita kasih display flex maka otomatis flex directionnya adalah row (horizontal) atau sejajar
+      14. flex-1 artinya flex-grow: 1; flex-shrink: 1; flex-basis: 0%; artinya dari kode ini dia akan membesar sebesar 1 (1/1) dari parentnya (karena flex-grow: 1) dan akan mengecil sebesar 1 (1/1) dari parentnya (karena flex-shrink: 1) dan akan memulai dari 0% (karena flex-basis: 0%)
     -->
 
     <script>
