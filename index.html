@@ -171,8 +171,8 @@
 
     <h2 class="mt-24 mb-20 text-center font-bold text-3xl text-slate-700">My Gallery</h2>
     
-    <div class="container mx-auto px-6 font-inter">
-      <div class="rounded-md shadow-lg overflow-hidden mb-10">
+    <div class="container mx-auto px-6 font-inter sm:flex sm:flex-wrap sm:gap-6 sm:justify-evenly">
+      <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
         <img src="img/laptop.jpg" alt="Laptop" class="w-full">
         <div class="px-6 py-4">
           <div class="font-bold text-xl mb-2 text-slate-700">
@@ -183,7 +183,7 @@
           </p>
         </div>
       </div>
-      <div class="rounded-md shadow-lg overflow-hidden mb-10">
+      <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
         <img src="img/laptop.jpg" alt="Laptop" class="w-full">
         <div class="px-6 py-4">
           <div class="font-bold text-xl mb-2 text-slate-700">
@@ -194,7 +194,29 @@
           </p>
         </div>
       </div>
-      <div class="rounded-md shadow-lg overflow-hidden mb-10">
+      <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+        <img src="img/laptop.jpg" alt="Laptop" class="w-full">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 text-slate-700">
+            Image Title
+          </div>
+          <p class="text-sm text-slate-600">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae assumenda odio harum veniam, omnis maxime, earum repellendus in qui nemo delectus ut tempore officiis temporibus aliquam? Perferendis ratione voluptas magnam.
+          </p>
+        </div>
+      </div>
+      <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+        <img src="img/laptop.jpg" alt="Laptop" class="w-full">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 text-slate-700">
+            Image Title
+          </div>
+          <p class="text-sm text-slate-600">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae assumenda odio harum veniam, omnis maxime, earum repellendus in qui nemo delectus ut tempore officiis temporibus aliquam? Perferendis ratione voluptas magnam.
+          </p>
+        </div>
+      </div>
+      <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
         <img src="img/laptop.jpg" alt="Laptop" class="w-full">
         <div class="px-6 py-4">
           <div class="font-bold text-xl mb-2 text-slate-700">
@@ -225,6 +247,7 @@
       12. Kalau di tailwind secara default menggunakan breakpoint mobile-first artinya yang diutamakan adalah mobile dulu baru ke atasnya sama seperti bootstrap
       13. Saat kita kasih display flex maka otomatis flex directionnya adalah row (horizontal) atau sejajar
       14. flex-1 artinya flex-grow: 1; flex-shrink: 1; flex-basis: 0%; artinya dari kode ini dia akan membesar sebesar 1 (1/1) dari parentnya (karena flex-grow: 1) dan akan mengecil sebesar 1 (1/1) dari parentnya (karena flex-shrink: 1) dan akan memulai dari 0% (karena flex-basis: 0%)
+      15. Biasanya kalau mau debug layout gunakan bg-red-500 atau bg-blue-500
     -->
 
     <script>
