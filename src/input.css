@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    h1 {
+        /* Pakai css biasa */
+        /* font-size: 10rem; */
+        color: theme('colors.wpu');
+
+        /* Kalau pakai class utilities dari tailwind */
+        @apply text-8x;
+    }
+
+    /*  
+    Note :
+    Bisa dengan theme('colors.wpu') atau dengan @apply text-wpu, perbedaannya color: theme('colors.wpu'); dengan @apply text-wpu adalah color: theme('colors.wpu'); akan menghasilkan css yang lebih spesifik (hasilnya akan sesuai dengan theme dari config yang udah disetting), sedangkan @apply text-wpu akan menghasilkan css yang lebih general (hasilnya akan rgb)
+    */
+}
+
+@layer components {
+    .grid-card {
+        @apply bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden relative hover:scale-95 transition-all duration-500;
+    }
+
+    .grid-card-img {
+        @apply w-full h-full bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-500;
+    }
+
+    /* 
+    Note :
+    - class group pd tailwind tidak dapat dipanggil di dalam @layer components
+    */
+}
+
+@layer utilities {
+    #toggle:checked ~ label div.toggle-circle {
+        @apply translate-x-3;
+    }
+}
+
+/*  
+    Note :
+    base, components, utilities adalah layer yang ada di tailwindcss yang bisa digunakan untuk memisahkan css berdasarkan fungsinya masing-masing, bedanya adalah dari posisi di output css yang dihasilkan oleh tailwindcss
+*/

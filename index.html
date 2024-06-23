@@ -6,45 +6,40 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="css/style.css">
     <script>
       // Bisa juga dimasukkan ke dalam file tailwind.config.js (ada di link https://tailwindcss.com/docs/customizing-spacing), cara dibawah ada di sini (https://tailwindcss.com/docs/installation)
-        tailwind.config = {
-          darkMode: 'class',
-          theme: {
-            // Extend itu perpanjangan dari class yang sudah ada nah kalau ga pakai extend maka class yang sudah ada tidak akan berfungsi
-            extend: {
-              spacing: {
-                13 : '3.25rem',
-              },
-              fontFamily: {
-                inter : ['Inter', 'sans-serif'],
-              },
-              colors: {
-                wpu : '#bada55',
-                kopi : '#c0ffee', // contoh aja kan harusnya ini warnya sesuai namanya (tapi kalau beda yaudah namanya juga belajar plus buat contoh)
-              },
-              animation: {
-                'spin-slow': 'spin 3s linear infinite',
-                'goyang': 'goyang 1s ease-in-out infinite',
-              },
-              keyframes: {
-                goyang: {
-                  '0%, 100%': { transform: 'rotate(-3deg)' },
-                  '50%': { transform: 'rotate(3deg)' },
-                }
+      /* tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          // Extend itu perpanjangan dari class yang sudah ada nah kalau ga pakai extend maka class yang sudah ada tidak akan berfungsi
+          extend: {
+            spacing: {
+              13 : '3.25rem',
+            },
+            fontFamily: {
+              inter : ['Inter', 'sans-serif'],
+            },
+            colors: {
+              wpu : '#bada55',
+              kopi : '#c0ffee', // contoh aja kan harusnya ini warnya sesuai namanya (tapi kalau beda yaudah namanya juga belajar plus buat contoh)
+            },
+            animation: {
+              'spin-slow': 'spin 3s linear infinite',
+              'goyang': 'goyang 1s ease-in-out infinite',
+            },
+            keyframes: {
+              goyang: {
+                '0%, 100%': { transform: 'rotate(-3deg)' },
+                '50%': { transform: 'rotate(3deg)' },
               }
             }
           }
         }
-      </script>
+      } */
+    </script>
     <title>Belajar Tailwind</title>
-    <style type="text/tailwindcss">
-      /* Karena pakai tailwind type nya diperlukan */
-      #toggle:checked ~ label div.toggle-circle {
-        @apply translate-x-3;
-      }
-    </style>
 </head>
 <body class="dark:bg-slate-800 dark:text-slate-200">
     <h1 class="text-8xl font-bold text-center my-10">Mari Belajar <span class="bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">Tailwind CSS</span></h1>
@@ -233,37 +228,39 @@
       <h2 class="h-15 text-xl font-semibold text-slate-700 md:col-start-4 md:row-start-2 md:flex"><span class="md:self-center">Welcome to MAK</span></h2>
       <div class="h-15 text-lg font-bold text-slate-600 md:col-start-2 md:row-start-2 md:flex"><span class="self-end">@alvin7710</span></div>
 
-      <div class="h-15 bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-500">
-        <div class="w-full h-full bg-[url('img/grid/1.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-500"></div>
+      <div class="group grid-card">
+        <div class="grid-card-img bg-[url('/img/grid/1.jpeg')]"></div>
       </div>
-      <div class="h-15 bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] md:col-start-3 overflow-hidden group relative hover:scale-95 transition-all duration-500">
-        <div class="w-full h-full bg-[url('img/grid/2.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-500"></div>
+      <div class="group grid-card md:col-start-3">
+        <div class="grid-card-img bg-[url('/img/grid/2.jpeg')]"></div>
       </div>
-      <div class="h-15 bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-500">
-        <div class="w-full h-full bg-[url('img/grid/3.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-500"></div>
+      <div class="group grid-card">
+        <div class="grid-card-img bg-[url('/img/grid/3.jpeg')]"></div>
       </div>
-      <div class="h-15 bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-500">
-        <div class="w-full h-full bg-[url('img/grid/4.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-500"></div>
+      <div class="group grid-card">
+        <div class="grid-card-img bg-[url('/img/grid/4.jpeg')]"></div>
       </div>
-      <div class="h-15 bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-500">
-        <div class="w-full h-full bg-[url('img/grid/5.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-500"></div>
+      <div class="group grid-card">
+        <div class="grid-card-img bg-[url('/img/grid/5.jpeg')]"></div>
       </div>
-      <div class="h-15 bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] md:col-start-2 overflow-hidden group relative hover:scale-95 transition-all duration-500">
-        <div class="w-full h-full bg-[url('img/grid/6.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-500"></div>
+      <div class="group grid-card md:col-start-2">
+        <div class="grid-card-img bg-[url('/img/grid/6.jpeg')]"></div>
       </div>
-      <div class="h-15 bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] md:col-start-4 overflow-hidden group relative hover:scale-95 transition-all duration-500">
-        <div class="w-full h-full bg-[url('img/grid/7.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-500"></div>
+      <div class="group grid-card md:col-start-4">
+        <div class="grid-card-img bg-[url('/img/grid/7.jpeg')]"></div>
       </div>
-      <div class="h-15 bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-500">
-        <div class="w-full h-full bg-[url('img/grid/8.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-500"></div>
+      <div class="group grid-card">
+        <div class="grid-card-img bg-[url('/img/grid/8.jpeg')]"></div>
       </div>
-      <div class="h-15 bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] md:col-start-3 overflow-hidden group relative hover:scale-95 transition-all duration-500">
-        <div class="w-full h-full bg-[url('img/grid/9.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-500"></div>
+      <div class="group grid-card md:col-start-3">
+        <div class="grid-card-img bg-[url('/img/grid/9.jpeg')]"></div>
       </div>
-      <div class="h-15 bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] md:col-start-3 overflow-hidden group relative hover:scale-95 transition-all duration-500">
-        <div class="w-full h-full bg-[url('img/grid/10.jpeg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-500"></div>
+      <div class="group grid-card md:col-start-3">
+        <div class="grid-card-img bg-[url('/img/grid/10.jpeg')]"></div>
       </div>
     </div>
+
+    <h1>Hello World</h1>
 
     <div class="mb-96"></div>
     <!--  
