@@ -1,24 +1,24 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./index.html'],
+  content: ["./index.html"],
   theme: {
     container: {
       center: true,
-      padding: '16px',
+      padding: "16px",
     },
     extend: {
       colors: {
-        'primary': '#2dd4bf',
-        'secondary': '#64748b',
-        'dark': '#0f766e',// aturan pake text-slate-900 tapi ini pake text-teal-700
+        primary: "#2dd4bf",
+        secondary: "#64748b",
+        dark: "#0f766e", // aturan pake text-slate-900 tapi ini pake text-teal-700
       },
       screens: {
-        '2xl': '1320px',
+        "2xl": "1320px",
       },
     },
   },
   plugins: [],
-}
+};
 
 /*  
 Note:
