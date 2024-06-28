@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./index.html"],
+  darkMode: "class", // or 'media' or 'class' => kalau ga disetting akan menggunakan si perangkatnya, kalau class akan menggunakan class dark atau saat nambahin dark di dalam class itu akan jalan, sedangkan kalau diisi media akan mengikuti settingan perangkatnya => di tailwind terbaru class diganti namanya menggunakan selector, penggunaan class terakhir pada Tailwind CSS v3.4.1, tapi menggunakan class juga masih bisa saat dicoba pada tailwind 3.4.4
   theme: {
     container: {
       center: true,

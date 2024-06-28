@@ -1,10 +1,38 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="src/output.css" />
+    <!-- Tahap Development -->
+    <!-- <link rel="stylesheet" href="src/output.css" /> -->
+
+    <!-- Tahap Production (sudah di minify) -->
+    <link rel="stylesheet" href="src/css/final_build.css" />
+
+    <!--  
+      Note:
+      Proses minify jika dilihat dari dokumentasinya (https://tailwindcss.com/docs/optimizing-for-production) itu langsung seperti ini:
+      npx tailwindcss -o build.css --minify => build.css merupakan nama kesesuaian kita kalau saya sepert ini => npx tailwindcss -o ./src/css/final_build.css --minify
+
+      Nah tapi ada beberapa style atau perlakuan yang telah kita setting atau buat  yang ga jalan dari yang sudah kita buat di input css jadi sebaiknya sertakan juga ambil inputnya dari mana, seperti ini:
+      npx tailwindcss -i ./src/input.css -o build.css --minify => input dan outpunya kesesuaian kita kalau saya seperti ini => npx tailwindcss -i ./src/input.css -o ./src/css/final_build
+.css --minify
+
+      Dan kalau sudah di minify arahkan ke file css yang sudah di minify dan kalau sudah menggunakan yang minify bisa dimatikan watch nya.
+    -->
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
   </head>
   <body>
     <!-- Header Section Start -->
@@ -38,50 +66,66 @@
 
             <nav
               id="nav-menu"
-              class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none"
+              class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg dark:bg-slate-900 dark:shadow-slate-500 lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none lg:dark:bg-transparent"
             >
               <ul class="block lg:flex">
                 <li class="group">
                   <a
                     href="#home"
-                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary"
+                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
                     >Beranda</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#about"
-                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary"
+                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
                     >Tentang Saya</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#portfolio"
-                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary"
+                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
                     >Portofolio</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#clients"
-                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary"
+                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
                     >Clients</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#blog"
-                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary"
+                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
                     >Blog</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#contact"
-                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary"
+                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
                     >Contact</a
                   >
+                </li>
+                <li class="mt-3 flex items-center pl-8 lg:mt-0">
+                  <div class="flex">
+                    <span class="mr-2 text-sm text-slate-500">Light</span>
+                    <input type="checkbox" class="hidden" id="dark-toggle" />
+                    <label for="dark-toggle">
+                      <div
+                        class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1"
+                      >
+                        <div
+                          class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out"
+                        ></div>
+                      </div>
+                    </label>
+                    <span class="ml-2 text-sm text-slate-500">Dark</span>
+                  </div>
                 </li>
               </ul>
             </nav>
@@ -92,24 +136,28 @@
     <!-- Header Section End -->
 
     <!-- Hero section start -->
-    <section id="home" class="pt-36">
+    <section id="home" class="pt-36 dark:bg-slate-900">
       <div class="container">
         <div class="flex flex-wrap">
           <!-- Column -->
           <div class="w-full self-center px-4 lg:w-1/2">
             <h1 class="text-base font-semibold text-primary md:text-xl">
               Hello All 🙌️, I'm
-              <span class="mt-1 block text-4xl font-bold text-dark lg:text-5xl"
+              <span
+                class="mt-1 block text-4xl font-bold text-dark dark:text-white lg:text-5xl"
                 >Muhammad Alfin Khaerudin</span
               >
             </h1>
             <h2 class="mb-5 text-lg font-medium text-secondary lg:text-2xl">
-              Web Developer & <span class="text-dark">Data Analyst</span>
+              Web Developer &
+              <span class="text-dark dark:text-white">Data Analyst</span>
             </h2>
             <p class="mb-10 font-medium leading-relaxed text-secondary">
               I'm a web developer based in Indonesian. I have rich experience in
               web site design and building, also
-              <span class="font-bold text-dark">I am good at laravel</span>.
+              <span class="font-bold text-dark dark:text-white"
+                >I am good at laravel</span
+              >.
             </p>
             <a
               href="#"
@@ -123,10 +171,10 @@
               <img
                 src="src/img/foto.png"
                 alt="My Photo"
-                class="mx-auto max-w-full"
+                class="relative z-10 mx-auto max-w-full"
               />
               <span
-                class="absolute -bottom-0 left-1/2 -z-10 -translate-x-1/2 md:scale-125"
+                class="absolute -bottom-0 left-1/2 -translate-x-1/2 md:scale-125"
               >
                 <svg
                   width="400"
@@ -149,14 +197,16 @@
     <!-- Hero section end -->
 
     <!-- About section start -->
-    <section id="about" class="pb-32 pt-36">
+    <section id="about" class="pb-32 pt-36 dark:bg-slate-900">
       <div class="container">
         <div class="flex flex-wrap">
           <div class="mb-10 w-full px-4 lg:w-1/2">
             <h4 class="mb-3 text-lg font-bold uppercase text-primary">
               Tentang Saya
             </h4>
-            <h2 class="mb-5 max-w-md text-4xl font-bold text-dark lg:text-4xl">
+            <h2
+              class="mb-5 max-w-md text-4xl font-bold text-dark dark:text-white lg:text-4xl"
+            >
               <!-- Quote tentang menjadi programmer dengan eng -->
               <!-- Every programmer is an author. -->
               Code never lies, comments sometimes do.
@@ -168,7 +218,7 @@
           </div>
           <div class="w-full px-4 lg:w-1/2">
             <h3
-              class="mb-4 text-2xl font-semibold text-dark lg:pt-10 lg:text-3xl"
+              class="mb-4 text-2xl font-semibold text-dark dark:text-white lg:pt-10 lg:text-3xl"
             >
               My Skills
             </h3>
@@ -280,13 +330,13 @@
     <!-- About section end -->
 
     <!-- Portfolio section start -->
-    <section id="portfolio" class="bg-slate-100 pb-16 pt-36">
+    <section id="portfolio" class="bg-slate-100 pb-16 pt-36 dark:bg-slate-800">
       <div class="container">
         <div class="w-full px-4">
           <div class="mx-auto mb-16 max-w-xl text-center">
             <h4 class="mb-2 text-lg font-semibold text-primary">Portfolio</h4>
             <h2
-              class="mb-4 text-3xl font-bold text-dark md:text-4xl lg:text-5xl"
+              class="mb-4 text-3xl font-bold text-dark dark:text-white md:text-4xl lg:text-5xl"
             >
               My Recent Works
             </h2>
@@ -303,7 +353,9 @@
             <div class="overflow-hidden rounded-md shadow-md">
               <img src="src/img/portfolio/1.png" alt="SISKOM LOKUM WEBSITE" />
             </div>
-            <h3 class="mb-3 mt-5 text-xl font-semibold text-dark">
+            <h3
+              class="mb-3 mt-5 text-xl font-semibold text-dark dark:text-white"
+            >
               SISKOM LOKUM WEBSITE
             </h3>
             <p class="text-base font-medium text-secondary md:text-lg">
@@ -315,7 +367,11 @@
             <div class="overflow-hidden rounded-md shadow-md">
               <img src="src/img/portfolio/2.png" alt="AIN" />
             </div>
-            <h3 class="mb-3 mt-5 text-xl font-semibold text-dark">AIN</h3>
+            <h3
+              class="mb-3 mt-5 text-xl font-semibold text-dark dark:text-white"
+            >
+              AIN
+            </h3>
             <p class="text-base font-medium text-secondary">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem
               optio nesciunt quas?
@@ -325,7 +381,9 @@
             <div class="overflow-hidden rounded-md shadow-md">
               <img src="src/img/portfolio/3.png" alt="PORTFOLIO WEBSITE" />
             </div>
-            <h3 class="mb-3 mt-5 text-xl font-semibold text-dark">
+            <h3
+              class="mb-3 mt-5 text-xl font-semibold text-dark dark:text-white"
+            >
               PORTFOLIO WEBSITE
             </h3>
             <p class="text-base font-medium text-secondary">
@@ -337,7 +395,9 @@
             <div class="overflow-hidden rounded-md shadow-md">
               <img src="src/img/portfolio/1.png" alt="KIDSERA DASHBOARD" />
             </div>
-            <h3 class="mb-3 mt-5 text-xl font-semibold text-dark">
+            <h3
+              class="mb-3 mt-5 text-xl font-semibold text-dark dark:text-white"
+            >
               KIDSERA DASHBOARD
             </h3>
             <p class="text-base font-medium text-secondary">
@@ -351,13 +411,13 @@
     <!-- Portfolio section end -->
 
     <!-- Clients section start -->
-    <section id="clients" class="bg-slate-800 pb-32 pt-36">
+    <section id="clients" class="bg-slate-800 pb-32 pt-36 dark:bg-slate-300">
       <div class="container">
         <div class="w-full px-4">
           <div class="mx-auto mb-16 text-center">
             <h4 class="mb-2 text-lg font-semibold text-primary">Clients</h4>
             <h2
-              class="mb-4 text-3xl font-bold text-white md:text-4xl lg:text-5xl"
+              class="mb-4 text-3xl font-bold text-white dark:text-slate-900 md:text-4xl lg:text-5xl"
             >
               I've worked with some awesome clients
             </h2>
@@ -400,13 +460,13 @@
     <!-- Clients section end -->
 
     <!-- Blog section start -->
-    <section id="blog" class="bg-slate-100 pb-32 pt-36">
+    <section id="blog" class="bg-slate-100 pb-32 pt-36 dark:bg-slate-900">
       <div class="container">
         <div class="w-full px-4">
           <div class="mx-auto mb-16 max-w-xl text-center">
             <h4 class="mb-2 text-lg font-semibold text-primary">Blog</h4>
             <h2
-              class="mb-4 text-3xl font-bold text-dark md:text-4xl lg:text-5xl"
+              class="mb-4 text-3xl font-bold text-dark dark:text-white md:text-4xl lg:text-5xl"
             >
               My Recent Blog
             </h2>
@@ -419,7 +479,9 @@
 
         <div class="flex flex-wrap justify-center">
           <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg">
+            <div
+              class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800"
+            >
               <img
                 src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjUxNDN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MTkyMzY4Njh8&ixlib=rb-4.0.3&q=80&w=360&h=200"
                 alt="Programming"
@@ -429,7 +491,7 @@
                 <h3>
                   <a
                     href=""
-                    class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary"
+                    class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white"
                     >Tips belajar Menjadi Programmer</a
                   >
                 </h3>
@@ -446,7 +508,9 @@
             </div>
           </div>
           <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg">
+            <div
+              class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800"
+            >
               <img
                 src="https://images.unsplash.com/photo-1615869442320-fd02a129c77c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjUxNDN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MTkyMzkzNzJ8&ixlib=rb-4.0.3&q=80&360&h=200"
                 alt="Keyboard"
@@ -456,7 +520,7 @@
                 <h3>
                   <a
                     href=""
-                    class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary"
+                    class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white"
                     >Review Keyboard</a
                   >
                 </h3>
@@ -473,7 +537,9 @@
             </div>
           </div>
           <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg">
+            <div
+              class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800"
+            >
               <img
                 src="https://images.unsplash.com/photo-1622465413095-2ee67c192522?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MjUxNDN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MTkyNDAxOTR8&ixlib=rb-4.0.3&q=80&360&h=200"
                 alt="Coffe"
@@ -483,7 +549,7 @@
                 <h3>
                   <a
                     href=""
-                    class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary"
+                    class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white"
                     >Review Coffe</a
                   >
                 </h3>
@@ -505,13 +571,13 @@
     <!-- Blog section end -->
 
     <!-- Contact section start -->
-    <section id="contact" class="pb-32 pt-36">
+    <section id="contact" class="pb-32 pt-36 dark:bg-slate-800">
       <div class="container">
         <div class="w-full px-4">
           <div class="mx-auto mb-16 max-w-xl text-center">
             <h4 class="mb-2 text-lg font-semibold text-primary">Contact</h4>
             <h2
-              class="mb-4 text-3xl font-bold text-dark md:text-4xl lg:text-5xl"
+              class="mb-4 text-3xl font-bold text-dark dark:text-white md:text-4xl lg:text-5xl"
             >
               Get In Touch
             </h2>
@@ -773,6 +839,16 @@
     </footer>
     <!-- Footer End -->
 
+    <!-- Back To Top Start -->
+    <a
+      href="#home"
+      class="fixed bottom-4 right-4 z-[9999] hidden h-14 w-14 items-center justify-center rounded-full bg-primary p-4 hover:animate-pulse"
+      id="to-top"
+    >
+      <span class="mt-2 block h-5 w-5 rotate-45 border-l-2 border-t-2"></span>
+    </a>
+    <!-- Back To Top End -->
+
     <script src="src/js/script.js"></script>
   </body>
 </html>
@@ -787,4 +863,5 @@
     - dimana ada rounded disitu ada shadow (merupakan collaborasi yang cukup oke)
     - tag a defaultnya inline, jadi kalau mau dijadikan block harus diubah displaynya
     - truncate adalah membuat text menjadi satu baris dan ketika lebih dari satu baris maka akan dipotong (menjadi ...)
+    - kalau ngasih z-index harus di kasih position relative atau absolute
 -->
